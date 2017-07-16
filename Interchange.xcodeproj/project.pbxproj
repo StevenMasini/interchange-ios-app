@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A6A5841F1B4CC70081DB5D /* PermutationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A5831F1B4CC70081DB5D /* PermutationCollectionViewController.swift */; };
+		90A6A5861F1B59850081DB5D /* PermutationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A5851F1B59850081DB5D /* PermutationCell.swift */; };
 		90BA0EC61F177A2500448A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BA0EC51F177A2500448A87 /* AppDelegate.swift */; };
 		90BA0EC81F177A2500448A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BA0EC71F177A2500448A87 /* ViewController.swift */; };
 		90BA0ECB1F177A2500448A87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90BA0EC91F177A2500448A87 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90A6A5831F1B4CC70081DB5D /* PermutationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermutationCollectionViewController.swift; sourceTree = "<group>"; };
+		90A6A5851F1B59850081DB5D /* PermutationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermutationCell.swift; sourceTree = "<group>"; };
 		90BA0EC21F177A2500448A87 /* Interchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BA0EC51F177A2500448A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90BA0EC71F177A2500448A87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				90BA0ECE1F177A2500448A87 /* LaunchScreen.storyboard */,
 				90BA0ED11F177A2500448A87 /* Info.plist */,
 				90BA0EE71F177C8F00448A87 /* String+Permutation.swift */,
+				90A6A5831F1B4CC70081DB5D /* PermutationCollectionViewController.swift */,
+				90A6A5851F1B59850081DB5D /* PermutationCell.swift */,
 			);
 			path = Interchange;
 			sourceTree = "<group>";
@@ -204,9 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A6A5861F1B59850081DB5D /* PermutationCell.swift in Sources */,
 				90BA0EC81F177A2500448A87 /* ViewController.swift in Sources */,
 				90BA0EC61F177A2500448A87 /* AppDelegate.swift in Sources */,
 				90BA0EE81F177C8F00448A87 /* String+Permutation.swift in Sources */,
+				90A6A5841F1B4CC70081DB5D /* PermutationCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +428,7 @@
 				90BA0EE11F177A2500448A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90BA0EE21F177A2500448A87 /* Build configuration list for PBXNativeTarget "InterchangeTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +437,7 @@
 				90BA0EE41F177A2500448A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

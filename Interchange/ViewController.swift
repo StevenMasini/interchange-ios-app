@@ -14,16 +14,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var combinaisonLabel:    UILabel!
     @IBOutlet weak var timeLabel:           UILabel!
     @IBOutlet weak var spinner:             UIActivityIndicatorView!
+    @IBOutlet weak var containerView:       UIView!
     
     let operationQueue  = OperationQueue()
     var permutationSet  = Set<String>()
     var executionTime   = 0.0
+    var permutationCollectionViewController: PermutationCollectionViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 1- set the text field delegate
         self.textField.delegate = self
+        
+        for childVC in self.childViewControllers {
+            if let permutationVC = childVC as? PermutationCollectionViewController {
+                self.permutationCollectionViewController = permutationVC
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +51,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // 3- define the operation
         weak var wself = self
         let op = BlockOperation {
-            let startTime = Date()
-            if let str = self.textField.text {
-                if !str.isEmpty {
-                    wself?.permutationSet = str.permutation()
-                } else {
-                    wself?.permutationSet = "ATGC".permutation()
+            if let wself = wself {
+                let startTime = Date()
+                if let str = self.textField.text {
+                    if !str.isEmpty {
+                        wself.permutationSet = str.permutation()
+                    } else {
+                        wself.permutationSet = "ATGC".permutation()
+                    }
                 }
+                wself.executionTime = Date().timeIntervalSince(startTime)
             }
-            wself?.executionTime = Date().timeIntervalSince(startTime)
         }
         
         op.completionBlock = {
@@ -63,6 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     // 2- update the ui
                     wself.combinaisonLabel.text = "Combinaison: \(wself.permutationSet.count)"
                     wself.timeLabel.text        = "Time: " + String(format: "%.3fs", wself.executionTime)
+                    wself.permutationCollectionViewController?.permutations = wself.permutationSet.map({$0})
                 }
             }
         }
@@ -77,7 +88,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: IBAction
     @IBAction func nucleobaseAction(_ sender: Any) {
-        
+        if let url = URL(string: "https://en.wikipedia.org/wiki/Nucleobase") {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
