@@ -13,7 +13,7 @@
         <scene sceneID="GAE-jB-77f">
             <objects>
                 <navigationController id="Hg4-6l-4ML" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="dBl-Lc-eGf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="dBl-Lc-eGf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,6 +53,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sY-TY-SfJ">
                                 <rect key="frame" x="16" y="91" width="343" height="30"/>
                                 <state key="normal" title="-&gt; What are nuclobases ?"/>
+                                <connections>
+                                    <action selector="nucleobaseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6d5-0D-jCu"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilh-mN-5nl">
                                 <rect key="frame" x="0.0" y="219" width="375" height="384"/>
@@ -114,7 +117,7 @@
                                 <rect key="frame" x="276" y="5" width="83" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iCq-7N-SqK">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iCq-7N-SqK">
                                         <rect key="frame" x="63" y="6" width="20" height="20"/>
                                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </activityIndicatorView>
@@ -127,6 +130,12 @@
                             </view>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="combinaisonLabel" destination="cOQ-cP-ftg" id="cdZ-lO-lgL"/>
+                        <outlet property="spinner" destination="iCq-7N-SqK" id="7HF-cR-pBN"/>
+                        <outlet property="textField" destination="CQ5-hX-Chd" id="3PX-i8-d4U"/>
+                        <outlet property="timeLabel" destination="1Bk-Vm-Jjh" id="QnZ-fo-yXV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,6 +145,10 @@
         <scene sceneID="2pZ-wd-Qed">
             <objects>
                 <viewController id="W8n-mx-WIl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wo6-KN-d5f"/>
+                        <viewControllerLayoutGuide type="bottom" id="G9A-02-IhW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uvW-wV-Oav">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="384"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
